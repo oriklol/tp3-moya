@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-char *CONCAT(int *string1,int *string2);
+char* CONCAT(const char *string1,const char *string2);
 
 int main(){
 	
@@ -9,7 +9,7 @@ int main(){
 	
 	int i=0;
 	
-	char* string1, string2;
+	char string1[100], string2[100];
 	
 	int res;
 	
@@ -19,15 +19,15 @@ int main(){
 	printf("Ingrese la segunda cadena: ");
 		scanf("%s", &string2);
 	
-	printf("%s",CONCAT(&string1,&string2));
+	printf("%s",CONCAT(string1,string2));
 	
 	return 0;
 	
 }
 
-char* CONCAT(int *string1,int *string2){
+char* CONCAT(const char *string1,const char *string2){
 	int i=0;
-	char* res;
+	char *res;
 
 	strcpy(res, string1);
 	
